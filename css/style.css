@@ -621,3 +621,6 @@
 .footer .copyright a:hover {
     color: var(--primary);
 }
+.fade {
+    opacity: 1 !important; /* Asegura que sea visible */
+}
