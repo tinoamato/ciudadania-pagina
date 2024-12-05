@@ -621,29 +621,3 @@
 .footer .copyright a:hover {
     color: var(--primary);
 }
-
-.fade {
-    opacity: 0;
-    visibility: hidden;
-    transition: opacity 0.5s ease, visibility 0.5s ease;
-}
-
-.fade.show {
-    opacity: 1;
-    visibility: visible;
-}
-
-/* Ocultar los pasos de forma predeterminada */
-.step {
-    opacity: 0;
-    visibility: hidden;
-    transform: translateY(20px);
-    transition: opacity 0.5s ease, transform 0.5s ease;
-}
-
-/* Mostrar el paso con animación */
-.step.show {
-    opacity: 1;
-    visibility: visible;
-    transform: translateY(0);
-}

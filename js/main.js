@@ -93,45 +93,29 @@
 
 })(jQuery);
 
-// Función para pasar al siguiente paso con transiciones suaves
-function nextStep(stepNumber) {
-    // Obtener todos los pasos
+function nextStep(step) {
+    // Ocultar todos los elementos con la clase "step"
     const steps = document.querySelectorAll('.step');
-    
-    // Ocultar todos los pasos, quitando la clase 'show'
-    steps.forEach(step => {
-        step.classList.remove('show');
-    });
+    steps.forEach(s => s.style.display = 'none');
 
-    // Mostrar el paso correspondiente agregando la clase 'show'
-    const stepToShow = document.getElementById('paso' + stepNumber);
-    stepToShow.classList.add('show');
-    
-    // Si llegamos al Paso 3, mostramos el formulario adecuado según el tipo de acta seleccionado
-    if (stepNumber === 3) {
-        showActaForm();
+    // Mostrar el paso actual
+    document.getElementById(`paso${step}`).style.display = 'block';
+
+    // Manejar la lógica específica para el paso 3
+    if (step === 3) {
+        const tipoActa = document.getElementById('tipoActa').value;
+        // Ocultar todos los formularios de actas
+        const actaForms = document.querySelectorAll('.actaForm');
+        actaForms.forEach(form => form.style.display = 'none');
+        
+        // Mostrar solo el formulario seleccionado
+        const formToShow = document.getElementById(`form${tipoActa.charAt(0).toUpperCase() + tipoActa.slice(1)}`);
+        if (formToShow) {
+            formToShow.style.display = 'block';
+        }
     }
 }
 
-// Función para mostrar el formulario adecuado en el Paso 3
-function showActaForm() {
-    const tipoActa = document.getElementById('tipoActa').value;
-
-    // Ocultar todos los formularios de actas
-    const actaForms = document.querySelectorAll('.actaForm');
-    actaForms.forEach(form => form.style.display = 'none');
-
-    // Mostrar el formulario correspondiente según el tipo de acta
-    if (tipoActa === 'nacimiento') {
-        document.getElementById('formNacimiento').style.display = 'block';
-    } else if (tipoActa === 'matrimonio') {
-        document.getElementById('formMatrimonio').style.display = 'block';
-    } else if (tipoActa === 'defuncion') {
-        document.getElementById('formDefuncion').style.display = 'block';
-    } else if (tipoActa === 'cnn') {
-        document.getElementById('formCNN').style.display = 'block';
-    }
-}
 
 
 
