@@ -116,6 +116,48 @@ function nextStep(step) {
     }
 }
 
+////ENTREVISTA
 
+function mostrarCalendario() {
+    // Ocultar el formulario original
+    const quoteSection = document.querySelector('.quote');
+    quoteSection.style.display = 'none';
+
+    // Mostrar el calendario
+    const calendarioSection = document.getElementById('calendarioSeleccion');
+    calendarioSection.style.display = 'block';
+
+    // Inicializar el calendario (usando flatpickr si es necesario)
+    flatpickr('#calendario', {
+        inline: true,
+        minDate: "today",
+        onChange: function(selectedDates, dateStr) {
+            cargarHorarios(dateStr);
+        }
+    });
+}
+
+function cargarHorarios(fecha) {
+    const horarioSelect = document.getElementById('seleccionHorario');
+    horarioSelect.innerHTML = ""; // Limpiar los horarios anteriores
+
+    const horarios = ["10:00 AM", "12:00 PM", "2:00 PM", "4:00 PM"];
+    horarios.forEach(horario => {
+        const option = document.createElement('option');
+        option.value = horario;
+        option.textContent = `${fecha} - ${horario}`;
+        horarioSelect.appendChild(option);
+    });
+}
+
+function confirmarSeleccion() {
+    const horarioSeleccionado = document.getElementById('seleccionHorario').value;
+    if (!horarioSeleccionado) {
+        alert("Por favor, selecciona un horario.");
+    } else {
+        alert(`Horario seleccionado: ${horarioSeleccionado}`);
+        // Aquí puedes añadir lógica adicional para confirmar la selección
+    }
+}
 
 
