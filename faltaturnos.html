@@ -111,189 +111,63 @@
     <!-- Page Header Start -->
     <div class="container-fluid page-header py-5 mb-5">
         <div class="container py-5">
-            <h1 class="display-3 text-white mb-3 animated slideInDown">Busqueda de Actas y Partidas</h1>
+            <h1 class="display-3 text-white mb-3 animated slideInDown">Falta de Turno</h1>
             <nav aria-label="breadcrumb animated slideInDown">
                 <ol class="breadcrumb">
                     <li class="breadcrumb-item"><a class="text-white" href="#">Inicio</a></li>
-                    <li class="breadcrumb-item"><a class="text-white" href="#">Servicios </a></li>
-                    <li class="breadcrumb-item text-white active" aria-current="page">Busqueda de Actas y Partidas</li>
+                    <li class="breadcrumb-item"><a class="text-white" href="#">Servicios</a></li>
+                    <li class="breadcrumb-item text-white active" aria-current="page">Falta de Turno</li>
                 </ol>
             </nav>
         </div>
     </div>
     <!-- Page Header End -->
 
-<!-- Formulario Paso 1 Start -->
-    <div  id="paso1" class="step show" style="display: block;" >
-        <div class="container about px-lg-0">
+
+    <!-- Quote Start -->
+    <div class="container-fluid bg-light overflow-hidden px-lg-0" style="margin: 6rem 0;">
+        <div class="container quote px-lg-0">
             <div class="row g-0 mx-lg-0">
-                <!-- Imagen a la izquierda -->
                 <div class="col-lg-6 ps-lg-0" style="min-height: 400px;">
                     <div class="position-relative h-100">
-                        <img class="position-absolute img-fluid w-100 h-100" src="img/about.jpg" style="object-fit: cover;" alt="Imagen relacionada">
+                        <img class="position-absolute img-fluid w-100 h-100" src="img/quote.jpg" style="object-fit: cover;" alt="">
                     </div>
                 </div>
-                <!-- Formulario a la derecha -->
-                <div class="col-lg-6 about-text py-5 wow fadeIn" data-wow-delay="0.5s">
+                <div class="col-lg-6 quote-text py-5 wow fadeIn" data-wow-delay="0.5s">
                     <div class="p-lg-5 pe-lg-0">
                         <div class="section-title text-start">
-                            <h1 class="display-5 mb-4">Paso 1: Información Personal</h1>
+                            <h1 class="display-5 mb-4">Solicitá tu turno</h1>
                         </div>
-                        <form id="actaForm">
-                            <div class="row mb-3">
-                                <div class="col-md-6">
-                                    <label for="nombre" class="form-label">Nombre*</label>
-                                    <input type="text" id="nombre" class="form-control" required>
+                        <p class="mb-4 pb-2">Descripcion sobre falta de turno...</p>
+                        <form>
+                            <div class="row g-3">
+                                <div class="col-12 col-sm-6">
+                                    <input type="text" class="form-control border-0" placeholder="Nombre" style="height: 55px;">
                                 </div>
-                                <div class="col-md-6">
-                                    <label for="apellido" class="form-label">Apellido*</label>
-                                    <input type="text" id="apellido" class="form-control" required>
+                                <div class="col-12 col-sm-6">
+                                    <input type="text" class="form-control border-0" placeholder="Apellido" style="height: 55px;">
+                                </div>
+                                <div class="col-12" >
+                                    <input type="email" class="form-control border-0" placeholder="Correo Electrónico" style="height: 55px;">
+                                </div>
+                                <div class="col-12">
+                                    <textarea class="form-control border-0" placeholder="Informacion Importante para preparar la entrevista."></textarea>
+                                </div>
+                                <div class="col-12">
+                                    <button class="btn btn-primary w-100 py-3" type="button">Solicitar Turno</button>
                                 </div>
                             </div>
-                            <div class="mb-3">
-                                <label for="email" class="form-label">Correo Electrónico*</label>
-                                <input type="email" id="email" class="form-control" required>
-                            </div>
-                            <button type="button" class="btn btn-primary py-3 px-5" onclick="nextStep(2)">Siguiente</button>
                         </form>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    <!-- Formulario Paso 1 End -->
 
-    <!-- Paso 2: Selección del tipo de acta -->
-    <div id="paso2" class="step" style="display: none; padding: 20px; border-radius: 8px; box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);">
-        <h2 class="mb-4">Seleccioná el tipo de Acta</h2>
-
-        <div class="form-group">
-            <label for="tipoActa">Tipo de Acta:</label>
-            <select id="tipoActa" class="form-control" required>
-                <option value="nacimiento">Acta de Nacimiento</option>
-                <option value="matrimonio">Acta de Matrimonio</option>
-                <option value="defuncion">Acta de Defunción</option>
-                <option value="cnn">Acta CNN</option>
-            </select>
-        </div>
-
-        <!-- Botón Siguiente -->
-        <button type="button" class="btn btn-primary" onclick="nextStep(3)">Siguiente</button>
-    </div>
-
-    <!-- Paso 3: Formulario dinámico (inicialmente oculto) -->
-    <div id="paso3" class="step" style="display: none;">
-
-
-    <!-- Formulario para Acta de Nacimiento -->
-    <div id="formNacimiento" class="actaForm fade" style="display: block; padding: 20px; border-radius: 8px; box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);">
-       <!-- Título y mensaje de advertencia -->
-        <h2 class="mb-4 text-center" style="font-size: 2rem; color: #7e5904;">Acta de Nacimiento - Datos de tu Avo</h2>
-        <p class="text-danger text-center mb-4" style="font-size: 1rem;">⚠ Recordá que los nombres deben estar en italiano.</p>
+    <!-- Quote End -->
     
-        <!-- Datos de la persona -->
-        <div class="row mb-3">
-            <div class="col-md-6">
-                <label for="nombreAvo" class="form-label">Nombre</label>
-                <input type="text" id="nombreAvo" class="form-control" placeholder="Ej: Lorenzo" required>
-            </div>
-            <div class="col-md-6">
-                <label for="apellidoAvo" class="form-label">Apellido</label>
-                <input type="text" id="apellidoAvo" class="form-control" placeholder="Ej: Rossi" required>
-            </div>
-        </div>
-    
-        <div class="row mb-3">
-            <div class="col-md-6">
-                <label for="comuneNacimiento" class="form-label">Comune de Nacimiento</label>
-                <input type="text" id="comuneNacimiento" class="form-control" placeholder="Ej: Alimena" required>
-            </div>
-            <div class="col-md-6">
-                <label for="provinciaNacimiento" class="form-label">Provincia de Nacimiento</label>
-                <input type="text" id="provinciaNacimiento" class="form-control" placeholder="Ej: Palermo" required>
-            </div>
-        </div>
-    
-        <div class="row mb-3">
-            <div class="col-md-6">
-                <label for="numeroActa" class="form-label">Número de Acta, Folio, Tomo (opcional)</label>
-                <input type="text" id="numeroActa" class="form-control" placeholder="Ej: Acta #23 Tomo 2">
-            </div>
-            <div class="col-md-6">
-                <label for="fechaNacimiento" class="form-label">Fecha de Nacimiento</label>
-                <input type="text" id="fechaNacimiento" class="form-control" placeholder="Ej: DD/MM/AAAA" required>
-            </div>
-        </div>
-    
-        <!-- Datos de los padres de la persona -->
-        <h3 class="mt-4 text-primary" style="font-size: 1.5rem;">Padres de tu Avo</h3>
-        <p class="text-danger text-center mb-4" style="font-size: 1rem;">⚠ Recordá que los nombres deben estar en italiano.</p>
-    
-        <!-- Datos del Padre -->
-        <h4 class="mt-3" style="font-size: 1.25rem; color: #7e5904;">Datos del Padre</h4>
-        <div class="row mb-3">
-            <div class="col-md-6">
-                <label for="nombrePadre" class="form-label">Nombre</label>
-                <input type="text" id="nombrePadre" class="form-control" placeholder="Ej: Andrea" required>
-            </div>
-            <div class="col-md-6">
-                <label for="apellidoPadre" class="form-label">Apellido</label>
-                <input type="text" id="apellidoPadre" class="form-control" placeholder="Ej: Bocelli" required>
-            </div>
-        </div>
-    
-        <!-- Datos de la Madre -->
-        <h4 class="mt-3" style="font-size: 1.25rem; color: #7e5904;">Datos de la Madre</h4>
-        <div class="row mb-3">
-            <div class="col-md-6">
-                <label for="nombreMadre" class="form-label">Nombre</label>
-                <input type="text" id="nombreMadre" class="form-control" placeholder="Ej: Renata" required>
-            </div>
-            <div class="col-md-6">
-                <label for="apellidoMadre" class="form-label">Apellido</label>
-                <input type="text" id="apellidoMadre" class="form-control" placeholder="Ej: Scotto" required>
-            </div>
-        </div>
-    
-        <!-- Cantidad de copias -->
-        <h3 class="mt-4 text-primary" style="font-size: 1.5rem;">Cantidad de Copias</h3>
-        <div class="row mb-3">
-            <div class="col-md-6">
-                <label for="cantidadCopias" class="form-label">Cantidad*</label>
-                <input type="number" id="cantidadCopias" class="form-control" min="1" placeholder="1" required>
-            </div>
-        </div>
-    
-        <!-- Botón Enviar (solo al final) -->
-        <div class="row mb-3">
-            <div class="col-12">
-                <button type="submit" class="btn btn-primary w-100" style="font-size: 1.25rem;">Enviar</button>
-            </div>
-        </div>
-    </div>
-        
-
-        <!-- Formulario para Acta de Matrimonio -->
-        <div id="formMatrimonio" class="actaForm" style="display: none;">
-            <!-- Formulario de Acta de Matrimonio aquí -->
-        </div>
-
-        <!-- Formulario para Acta de Defunción -->
-        <div id="formDefuncion" class="actaForm" style="display: none;">
-            <!-- Formulario de Acta de Defunción aquí -->
-        </div>
-
-        <!-- Formulario para Acta CNN -->
-        <div id="formCNN" class="actaForm" style="display: none;">
-            <!-- Formulario de Acta CNN aquí -->
-        </div>
-    </div>
-
-
-
-
-     <!-- Footer Start -->
-     <div class="container-fluid bg-dark text-light footer mt-5 pt-5 wow fadeIn" data-wow-delay="0.1s">
+      <!-- Footer Start -->
+      <div class="container-fluid bg-dark text-light footer mt-5 pt-5 wow fadeIn" data-wow-delay="0.1s">
         <div class="container py-5">
             <div class="row g-5">
                 <div class="col-lg-3 col-md-6">
@@ -348,6 +222,13 @@
 
     <!-- Back to Top -->
     <a href="#" class="btn btn-lg btn-primary btn-lg-square rounded-0 back-to-top"><i class="bi bi-arrow-up"></i></a>
+
+
+
+    <!-- Flatpickr CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+    <!-- Flatpickr JS -->
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
 
 
     <!-- JavaScript Libraries -->
